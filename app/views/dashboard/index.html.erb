@@ -1,23 +1,6 @@
 <h1>Wellcome to KanCare</h1>
 <h1>You are signed in as <%= current_user.email %></h1>
 
-
-<div>
-  <div>
-    <div>What will you do today?</div>
-  </div>
-  <div style="display: flex; justify-content: center;">
-    <div>
-      <%= link_to image_tag('dashboard/poop.jpeg', width: 200, height: 200), '#' %>
-    </div>
-    <div>
-      <%= link_to image_tag('dashboard/food.jpg', width: 200, height: 200), '#' %>
-    </div>
-    <div>
-      <%= link_to image_tag('dashboard/walk.jpg', width: 200, height: 200), '#' %>
-    </div>
-    <div>
-      <%= link_to image_tag('dashboard/toy.jpg', width: 200, height: 200), '#' %>
-    </div>
-  </div>
-</div>
+<%= link_to 'Calendar', care_actions_path %>
+<br>
+<%= link_to 'What did you do today?', new_care_action_path %>

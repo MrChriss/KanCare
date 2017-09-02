@@ -1,0 +1,28 @@
+<div>
+  <div style="display: flex; justify-content: center;">
+    <div>
+      <%= form_with model: @care_action do |f| %>
+        <%= f.hidden_field :category, value: 'poop' %>
+        <%= image_submit_tag('dashboard/poop.jpg', width: 200, height: 200) %>
+      <% end %>
+    </div>
+    <div>
+      <%= form_with model: @care_action do |f| %>
+        <%= f.hidden_field :category, value: 'food' %>
+        <%= image_submit_tag('dashboard/food.jpg', width: 200, height: 200) %>
+      <% end %>
+    </div>
+    <div>
+      <%= form_with model: @care_action do |f| %>
+        <%= f.hidden_field :category, value: 'walk' %>
+        <%= image_submit_tag('dashboard/walk.jpg', width: 200, height: 200) %>
+      <% end %>
+    </div>
+    <div>
+      <%= form_with model: @care_action do |f| %>
+        <%= f.hidden_field :category, value: 'play' %>
+        <%= image_submit_tag('dashboard/play.jpg', width: 200, height: 200) %>
+      <% end %>
+    </div>
+  </div>
+</div>
