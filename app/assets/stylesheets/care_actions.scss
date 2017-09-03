@@ -1,3 +1,76 @@
 // Place all the styles related to the CareActions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  text-align: center;
+}
+
+.kan-care-background {
+  background-color: #B8ECD7;
+}
+
+.greetings {
+  // color: rgb(8,54,67);
+  color: rgba(8,54,67,50%);
+  font-size: 600%;
+  font-family: 'Boogaloo', cursive;
+}
+
+.image-container {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+
+.action-images {
+  display: flex;
+  justify-content: center;
+}
+
+.action-image-from {
+  margin-right: 50px;
+}
+
+.action-images input {
+  opacity: 0.5;
+}
+
+.action-images input:hover {
+  opacity: 0.8;
+}
+
+.form-text {
+  color: rgba(71,108,94,30%);
+  font-size: 200%;
+  font-family: 'Josefin Sans', sans-serif;
+
+  &.alert {
+    color: #AD2312;
+  }
+}
+
+.main-image {
+  size: 10%;
+}
+
+.link-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.link {
+  margin: 50px;
+  color: rgba(8,54,67,50%);
+  font-size: 300%;
+  font-family: 'Boogaloo', cursive;
+  text-decoration: none
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+}

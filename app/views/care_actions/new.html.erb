@@ -1,28 +1,53 @@
-<div>
-  <div style="display: flex; justify-content: center;">
-    <div>
-      <%= form_with model: @care_action do |f| %>
-        <%= f.hidden_field :category, value: 'poop' %>
-        <%= image_submit_tag('dashboard/poop.jpg', width: 200, height: 200) %>
-      <% end %>
-    </div>
-    <div>
-      <%= form_with model: @care_action do |f| %>
-        <%= f.hidden_field :category, value: 'food' %>
-        <%= image_submit_tag('dashboard/food.jpg', width: 200, height: 200) %>
-      <% end %>
-    </div>
-    <div>
+<h1 class='greetings'> Hi, <%= current_user.email %></h1>
+<%= image_tag 'care_actions/hellohuman2.png', class: 'main-image' %>
+
+<div class='image-container'>
+  <div class='action-images'>
+    <div class='action-image-from'>
       <%= form_with model: @care_action do |f| %>
         <%= f.hidden_field :category, value: 'walk' %>
-        <%= image_submit_tag('dashboard/walk.jpg', width: 200, height: 200) %>
+        <%= image_submit_tag('care_actions/walk.png') %>
       <% end %>
+      <p class='form-text'>
+        <%# if CareAction.walk.last %>
+        <%= time_ago_in_words(CareAction.walk.last&.created_at) + ' ago' if CareAction.walk.last %>
+      </p>
     </div>
-    <div>
+    <div class='action-image-from'>
       <%= form_with model: @care_action do |f| %>
-        <%= f.hidden_field :category, value: 'play' %>
-        <%= image_submit_tag('dashboard/play.jpg', width: 200, height: 200) %>
+        <%= f.hidden_field :category, value: 'poop' %>
+        <%= image_submit_tag('care_actions/poop.png') %>
       <% end %>
+      <p class='form-text'>
+        <%= time_ago_in_words(CareAction.poop.last&.created_at) + ' ago' if CareAction.poop.last %>
+      </p>
     </div>
+    <div class='action-image-from'>
+      <%= form_with model: @care_action do |f| %>
+        <%= f.hidden_field :category, value: 'food' %>
+        <%= image_submit_tag('care_actions/food.png') %>
+      <% end %>
+      <p class='form-text'>
+        <%= time_ago_in_words(CareAction.food.last&.created_at) + ' ago' if CareAction.food.last %>
+      </p>
+    </div>
+
+
+    <!-- <div class='action-image-from'>
+      <%#= form_with model: @care_action do |f| %>
+        <%#= f.hidden_field :category, value: 'play' %>
+        <%#= image_submit_tag('care_actions/play.png') %>
+      <%# end %>
+      <p class='form-text'>
+        <%#= (time_ago_in_words(CareAction.play.last&.created_at) || 'never') + ' ago' %>
+      </p>
+    </div> -->
+
+
   </div>
+</div>
+
+<div class='link-container'>
+  <%= link_to 'Go to calendar', care_actions_path, class: 'link' %>
+  <%= link_to 'More', '#', class: 'link' %>
 </div>
