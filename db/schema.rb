@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902191342) do
+ActiveRecord::Schema.define(version: 20171014101950) do
 
   create_table "care_actions", force: :cascade do |t|
     t.integer "user_id"
@@ -18,13 +18,6 @@ ActiveRecord::Schema.define(version: 20170902191342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_care_actions_on_user_id"
-  end
-
-  create_table "days", force: :cascade do |t|
-    t.string "name"
-    t.datetime "start_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -40,6 +33,8 @@ ActiveRecord::Schema.define(version: 20170902191342) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
+    t.string "nick_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -2,19 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-  text-align: center;
-}
+$default-font-cursive: 'Boogaloo', cursive;
+$default-font-sans-serif: 'Josefin Sans', sans-serif;
+$default-font: 'Roboto', sans-serif;
+
+// * {
+//   text-align: center;
+// }
 
 .kan-care-background {
-  background-color: #B8ECD7;
-}
-
-.greetings {
-  // color: rgb(8,54,67);
-  color: rgba(8,54,67,50%);
-  font-size: 600%;
-  font-family: 'Boogaloo', cursive;
+  // background-color: #B8ECD7;
+  background-color: white;
 }
 
 .image-container {
@@ -42,7 +40,7 @@
 .form-text {
   color: rgba(71,108,94,30%);
   font-size: 200%;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: $default-font-sans-serif;
 
   &.alert {
     color: #AD2312;
@@ -50,7 +48,10 @@
 }
 
 .main-image {
+  width: 315px;
+  height: 450px;
   size: 10%;
+
 }
 
 .link-container {
@@ -63,8 +64,14 @@
   margin: 50px;
   color: rgba(8,54,67,50%);
   font-size: 300%;
-  font-family: 'Boogaloo', cursive;
-  text-decoration: none
+  font-family: $default-font-sans-serif;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+    background-color: white;
+    color: rgba(8,54,67,50%);
+  }
 }
 
 a:hover {

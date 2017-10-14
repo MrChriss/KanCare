@@ -9,9 +9,27 @@
     <!-- google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
   </head>
+  <body>
+    <% if current_user %>
+      <nav class='main-nav'>
+        <div class='user-greeting-left'>
+          <div class='logo'>Kan Care</div>
+          <div class='greetings'>
+            Hi, <%= current_user.nick_name || current_user.email %>
+          </div>
+        </div>
+        <div class='user-options-right'>
+          <div class='user-image'>
+            <%= link_to edit_user_path(current_user) do %>
+              <%= image_tag current_user.avatar.url || 'placeholder.jpg' %>
+            <% end %>
+          </div>
+        </div>
+      </nav>
+    <% end %>
 
-  <body class="kan-care-background">
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

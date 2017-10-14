@@ -1,5 +1,6 @@
-<h1 class='greetings'> Hi, <%= current_user.email %></h1>
-<%= image_tag 'care_actions/hellohuman2.png', class: 'main-image' %>
+<%= link_to care_actions_path, class: 'link' do %>
+  <%= image_tag 'care_actions/hellohuman2.png', class: 'main-image' %>
+<% end %>
 
 <div class='image-container'>
   <div class='action-images'>
