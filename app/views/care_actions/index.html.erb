@@ -1,7 +1,8 @@
-<%= month_calendar(attribure: :created_at) do |date| %>
+<%= month_calendar events: @care_actions do |date, care_actions| %>
   <%= date.day %>
-  <% CareAction.care_actions_for_date(date).each do |action| %>
-    <%= renderCareActionIcon(action) %>
+
+  <% care_actions.each do |care_action| %>
+    <%= link_to render_care_action_icon(care_action), care_action_path(care_action.id) %>
   <% end %>
 <% end %>
 

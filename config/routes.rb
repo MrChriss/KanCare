@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:edit, :update]
-  resources :care_actions, only: [:create, :index, :new]
+  resources :care_actions, except: %i(edit)
 end

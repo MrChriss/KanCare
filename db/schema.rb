@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171014101950) do
+ActiveRecord::Schema.define(version: 2019_02_02_114733) do
 
   create_table "care_actions", force: :cascade do |t|
     t.integer "user_id"
     t.integer "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "starts_at"
+    t.datetime "ends_at"
     t.index ["user_id"], name: "index_care_actions_on_user_id"
   end
 

@@ -1,0 +1,20 @@
+<% if current_user %>
+  <nav class='navbar fixed-top navbar-dark bg-dark'>
+    <div class='navbar-brand'>
+      Hello, <%= current_user.nick_name || current_user.email %>
+    </div>
+    <ul class='navbar-nav'>
+      <li class='nav-item'>
+        <%= link_to 'Calendar', care_actions_path, class: 'nav-link' %>
+      </li>
+      <li class='nav-item'>
+        <%= link_to 'Home', new_care_action_path, class: 'nav-link' %>
+      </li>
+      <li class='nav-item'>
+        <%= link_to 'Settings', edit_user_path(current_user), class: 'nav-link' %>
+      </li>
+    </ul>
+    <%= image_tag current_user.avatar.url || 'placeholder.jpg',
+          max_width: '100%', height: '68' %>
+  </nav>
+<% end %>

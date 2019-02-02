@@ -1,0 +1,17 @@
+<div>
+<%= image_tag @care_action.user.avatar.thumb.url || 'placeholder.jpg', class: 'card-img-top' %>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Category: <%= @care_action.category %></h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Email: <%= @care_action.user.email %></li>
+    <li class="list-group-item">Nick name: <%= @care_action.user.nick_name %></li>
+    <li class="list-group-item">At: <%= distance_of_time_in_words(Time.current, @care_action.start_time) %> ago</li>
+  </ul>
+  <div class="card-body">
+    <%= link_to 'Go to calendar', care_actions_path, class: 'card-link' %>
+    <%= link_to 'Delete this event', @care_action, method: :delete, class: 'card-link' %>
+  </div>
+</div>
