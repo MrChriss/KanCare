@@ -9,10 +9,10 @@
         <%= image_tag 'care_actions/walk.png', style: 'width: 11rem; align-self: center;' %>
         <div class='card-body text-success'>
           <h5 class='card-title'>
-            <%= CareAction.walk.last&.user&.nick_name %>
+            <%= CareAction.walk.order(:created_at).last&.user&.nick_name %>
           </h5>
           <p class='card-text'>
-            <%= time_ago_in_words(CareAction.walk.last&.start_time) + ' ago' if CareAction.walk.last %>
+            <%= time_ago_in_words(CareAction.walk.order(:created_at).last&.start_time) + ' ago' if CareAction.walk.last %>
           </p>
           <%= form_with model: @care_action do |f| %>
             <%= f.hidden_field :category, value: 'walk' %>
@@ -27,10 +27,10 @@
         <%= image_tag 'care_actions/poop.png', style: 'align-self: center;' %>
         <div class='card-body text-info'>
           <h5 class='card-title'>
-            <%= CareAction.poop.last&.user&.nick_name %>
+            <%= CareAction.poop.order(:created_at).last&.user&.nick_name %>
           </h5>
           <p class='card-text'>
-            <%= time_ago_in_words(CareAction.poop.last&.start_time) + ' ago' if CareAction.poop.last %>
+            <%= time_ago_in_words(CareAction.poop.order(:created_at).last&.start_time) + ' ago' if CareAction.poop.last %>
           </p>
           <%= form_with model: @care_action do |f| %>
             <%= f.hidden_field :category, value: 'poop' %>
@@ -45,10 +45,10 @@
         <%= image_tag 'care_actions/food.png', style: 'align-self: center;' %>
         <div class='card-body text-primary'>
           <h5 class='card-title'>
-            <%= CareAction.food.last&.user&.nick_name %>
+            <%= CareAction.food.order(:created_at).last&.user&.nick_name %>
           </h5>
           <p class='card-text'>
-            <%= time_ago_in_words(CareAction.food.last&.start_time) + ' ago' if CareAction.food.last %>
+            <%= time_ago_in_words(CareAction.food.order(:created_at).last&.start_time) + ' ago' if CareAction.food.last %>
           </p>
           <%= form_with model: @care_action do |f| %>
             <%= f.hidden_field :category, value: 'food' %>
